@@ -18,6 +18,11 @@ dbConnection();
 //rutas
 app.use('/api/usuarios', require('./routes/usuarios'));
 app.use('/api/login', require('./routes/auth'));
+app.use('/api/prestamos', require('./routes/prestamos'));
+app.use('/api/libros', require('./routes/libros'));
+app.use('/api/todo', require('./routes/busquedas'));
+app.use('/api/upload', require('./routes/uploads'));
+
 
 app.listen(process.env.PORT, () => {
     console.log('Servidor corriendo en el puerto '+ process.env.PORT);
