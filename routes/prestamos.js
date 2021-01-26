@@ -34,11 +34,15 @@
   
   router.put('/:id', 
   [
-     
+    validarJWT,
+    check('fechaDevolucion','debe ingresar la nueva fecha de devolucion').not().isEmpty(),
+    check('libro', 'el id del libro debe ser valido').isMongoId(),
+   validarCampos
   ],
   actualizarPrestamos );
   
   router.delete('/:id',
+  validarJWT,
   borrarPrestamos );
   
   

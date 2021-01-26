@@ -32,11 +32,15 @@ router.post('/',
 
 router.put('/:id', 
 [
-   
+   validarJWT,
+   check('titulo','debe renombrar tambien el titulo').not().isEmpty(),
+   check('autor','debe renombrar tambien el autor').not().isEmpty(),
+   validarCampos
 ],
 actualizarLibros );
 
 router.delete('/:id',
+validarJWT,
 borrarLibros );
 
 
